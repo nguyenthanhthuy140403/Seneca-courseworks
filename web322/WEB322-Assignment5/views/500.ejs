@@ -1,0 +1,34 @@
+<!-- 500.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lego Collection - Server Error</title>
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body tabindex="-1">
+
+  <% include('partials/navbar', { page: '' }) %>
+
+  <div class="container mx-auto p-4">
+
+    <div class="hero bg-error rounded-lg p-6"> <!-- Update the background color class -->
+      <div class="hero-content text-center ">
+        <div class="max-w-md">
+          <h1 class="text-5xl font-bold">500</h1> <!-- Update the error code -->
+          <p class="py-6">Internal Server Error. Please try again later.</p> <!-- Update the error message -->
+        </div>
+      </div>
+    </div>
+
+    <br />
+
+  </div>
+
+</body>
+
+</html>

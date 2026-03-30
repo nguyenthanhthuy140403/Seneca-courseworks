@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Add your meta and link tags here -->
+  <title>Lego Collection</title>
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body tabindex="-1">
+  <div class="navbar bg-base-100">
+    <!-- Include the navbar partial with an empty page value -->
+    <%- include('partials/navbar', { page: '' }) %>
+  </div>
+
+  <!-- Add an updated hero element with a dynamic name -->
+  <div class="hero bg-base-200 rounded-lg p-6">
+    <div class="hero-content text-center">
+      <div class="max-w-md">
+        <h1 class="text-5xl font-bold"><%= set.name %></h1>
+        <p class="py-6">Below, you will find detailed information about the set: <%= set.name %>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Render the set details here, including image, name, year, theme, num_parts, and a back button -->
+  <div class="container mx-auto">
+    <div class="prose">
+      <img src="<%= set.img_url %>" alt="Lego Set" class="w-full rounded-lg" />
+      <p>Name: <%= set.name %></p>
+      <p>Year: <%= set.year %></p>
+      <p>Theme: <%= set.theme %></p>
+      <p>Number of Parts: <%= set.num_parts %></p>
+      <p id="quote">Loading quote...</p>
+      <a href="#" onclick="history.back(); return false;" class="btn btn-primary">Back</a>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Fetch a random quote and update the element with id "quote"
+      fetch("https://quotable.io/random")
+        .then((response) => response.json())
+        .then((data) => {
+          const quoteElement = document.getElementById("quote");
+          quoteElement.textContent = `"${data.content}" - ${data.author}`;
+        });
+    });
+  </script>
+</body>
+
+</html>
