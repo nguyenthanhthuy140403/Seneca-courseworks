@@ -1,5 +1,5 @@
 # Seneca Polytechnic Projects
-Repository of academic work from Seneca Polytechnic, including projects in C++, JavaScript, systems programming, and foundational computing concepts.
+Repository of academic work from Seneca Polytechnic, including projects in C++, JavaScript, HTML systems programming, and foundational computing concepts.
 
 ## Overview
 The goal of this repository is to showcase my foundation knowledge I had learned in Seneca:
